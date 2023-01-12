@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OffersCollectionViewCell" reuseIdentifier="OffersCollectionViewCell" id="gTV-IL-0wX" customClass="OffersCollectionViewCell" customModule="Cleaner_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="291" height="153"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="zIj-sg-UVE">
+                        <rect key="frame" x="0.0" y="0.0" width="291" height="153"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <visualEffectView opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zz-mk-BDH">
+                        <rect key="frame" x="145.66666666666663" y="0.0" width="145.33333333333337" height="153"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q5T-Sh-N95">
+                            <rect key="frame" x="0.0" y="0.0" width="145.33333333333337" height="153"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Condition Service" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfr-Wu-RFH">
+                                    <rect key="frame" x="8" y="8" width="129.33333333333334" height="38.333333333333336"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25% Offer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sT0-lP-bmY">
+                                    <rect key="frame" x="33" y="66" width="79" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-tS-Xc8">
+                                    <rect key="frame" x="42.666666666666686" y="95" width="60" height="21"/>
+                                    <color key="backgroundColor" red="0.1176470518" green="0.2823529541" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="Rjc-69-flK"/>
+                                        <constraint firstAttribute="height" constant="21" id="hsi-9U-hT0"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Shop Now">
+                                        <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="8"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="sT0-lP-bmY" firstAttribute="centerX" secondItem="Q5T-Sh-N95" secondAttribute="centerX" id="1lm-z4-9wg"/>
+                                <constraint firstItem="sT0-lP-bmY" firstAttribute="centerY" secondItem="Q5T-Sh-N95" secondAttribute="centerY" id="AGF-vl-La4"/>
+                                <constraint firstItem="Zfr-Wu-RFH" firstAttribute="top" secondItem="Q5T-Sh-N95" secondAttribute="top" constant="8" id="BEC-Ji-qXx"/>
+                                <constraint firstItem="Zfr-Wu-RFH" firstAttribute="leading" secondItem="Q5T-Sh-N95" secondAttribute="leading" constant="8" id="S1C-qa-cto"/>
+                                <constraint firstItem="7gJ-tS-Xc8" firstAttribute="centerX" secondItem="sT0-lP-bmY" secondAttribute="centerX" id="Wle-Yg-6sJ"/>
+                                <constraint firstItem="7gJ-tS-Xc8" firstAttribute="top" secondItem="sT0-lP-bmY" secondAttribute="bottom" constant="8" id="l0M-iE-r6i"/>
+                                <constraint firstAttribute="trailing" secondItem="Zfr-Wu-RFH" secondAttribute="trailing" constant="8" id="lag-ca-4E9"/>
+                            </constraints>
+                        </view>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <blurEffect style="systemThickMaterialDark"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </visualEffectView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zIj-sg-UVE" secondAttribute="trailing" id="9Pc-ak-OvM"/>
+                <constraint firstAttribute="bottom" secondItem="zIj-sg-UVE" secondAttribute="bottom" id="B7X-6M-Mxw"/>
+                <constraint firstAttribute="bottom" secondItem="8Zz-mk-BDH" secondAttribute="bottom" id="CuZ-Em-I1V"/>
+                <constraint firstItem="8Zz-mk-BDH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GiS-c4-j07"/>
+                <constraint firstItem="zIj-sg-UVE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H6g-qo-L8O"/>
+                <constraint firstItem="8Zz-mk-BDH" firstAttribute="width" secondItem="zIj-sg-UVE" secondAttribute="width" multiplier="0.5" id="JDm-li-g5u"/>
+                <constraint firstAttribute="trailing" secondItem="8Zz-mk-BDH" secondAttribute="trailing" id="rmK-tE-eVu"/>
+                <constraint firstItem="zIj-sg-UVE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ux4-Yj-xi2"/>
+            </constraints>
+            <size key="customSize" width="291" height="153"/>
+            <point key="canvasLocation" x="225.19083969465649" y="34.859154929577464"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="2537" height="3800"/>
+    </resources>
+</document>

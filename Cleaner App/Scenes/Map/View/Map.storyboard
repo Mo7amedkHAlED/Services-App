@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Try View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController restorationIdentifier="MapViewController" storyboardIdentifier="MapViewController" id="Y6W-OH-hqX" customClass="MapTryViewController" customModule="Cleaner_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-hR-Rd5">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y36-WK-yT8">
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5C-df-MWE">
+                                <rect key="frame" x="8" y="750" width="374" height="60"/>
+                                <color key="backgroundColor" red="0.38431376220000002" green="0.7019608021" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Uj9-5v-Z8k"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Confirm"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uw-3w-erZ">
+                                <rect key="frame" x="332" y="702" width="50" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WRi-fj-txE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLg-Pb-2EH">
+                                <rect key="frame" x="8" y="702" width="324" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U0K-Di-6ME"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oWB-hR-Rd5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="3rW-cj-IQP"/>
+                            <constraint firstItem="j5C-df-MWE" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="4OD-Bo-NOA"/>
+                            <constraint firstItem="1uw-3w-erZ" firstAttribute="bottom" secondItem="JLg-Pb-2EH" secondAttribute="bottom" id="7rf-g0-3e9"/>
+                            <constraint firstItem="JLg-Pb-2EH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="DnL-NG-QOR"/>
+                            <constraint firstItem="1uw-3w-erZ" firstAttribute="leading" secondItem="JLg-Pb-2EH" secondAttribute="trailing" id="GNC-dw-WkA"/>
+                            <constraint firstItem="oWB-hR-Rd5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Hfo-NZ-O58"/>
+                            <constraint firstAttribute="bottom" secondItem="Y36-WK-yT8" secondAttribute="bottom" id="IRp-CW-eUy"/>
+                            <constraint firstItem="j5C-df-MWE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="QTK-et-gNf"/>
+                            <constraint firstItem="Y36-WK-yT8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="U7U-Eb-0Ql"/>
+                            <constraint firstItem="1uw-3w-erZ" firstAttribute="centerY" secondItem="JLg-Pb-2EH" secondAttribute="centerY" id="aBG-4w-dp3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="j5C-df-MWE" secondAttribute="trailing" constant="8" id="c3H-FZ-MLI"/>
+                            <constraint firstItem="Y36-WK-yT8" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dAD-2T-bXX"/>
+                            <constraint firstItem="j5C-df-MWE" firstAttribute="top" secondItem="1uw-3w-erZ" secondAttribute="bottom" constant="8" id="ddf-nr-wED"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oWB-hR-Rd5" secondAttribute="trailing" id="dtp-g1-ZQl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1uw-3w-erZ" secondAttribute="trailing" constant="8" id="mph-17-NCP"/>
+                            <constraint firstAttribute="bottom" secondItem="oWB-hR-Rd5" secondAttribute="bottom" id="oKh-OJ-eA3"/>
+                            <constraint firstItem="1uw-3w-erZ" firstAttribute="top" secondItem="JLg-Pb-2EH" secondAttribute="top" id="rL0-m3-k8U"/>
+                            <constraint firstItem="j5C-df-MWE" firstAttribute="top" secondItem="JLg-Pb-2EH" secondAttribute="bottom" constant="8" id="rkq-z6-RhZ"/>
+                            <constraint firstItem="Y36-WK-yT8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sBE-RS-loK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationTX" destination="JLg-Pb-2EH" id="FZU-GR-Sag"/>
+                        <outlet property="mapView" destination="Y36-WK-yT8" id="ti2-9J-VVW"/>
+                        <outlet property="searchButton" destination="1uw-3w-erZ" id="Tg8-1g-cAz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3.0769230769230766" y="-2.8436018957345972"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="375" height="812"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
