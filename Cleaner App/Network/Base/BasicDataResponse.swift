@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class BasicDataResponse <T: Codable>:  Codable {
+    let results: T?
+    let count: Int?
+}

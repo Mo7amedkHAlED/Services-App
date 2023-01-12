@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+let api: UsersAPIProtocol = ServiceAPI()
+
+typealias TableView = UITableViewDelegate & UITableViewDataSource
+
+typealias CollectionView = UICollectionViewDataSource & UICollectionViewDelegate

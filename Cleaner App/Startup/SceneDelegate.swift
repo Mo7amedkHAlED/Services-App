@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           var controller: UIViewController!
               
           if UserDefaults.standard.hasOnboarded {
-              let storyboard = UIStoryboard(name: "language", bundle: nil)
-              controller = storyboard.instantiateViewController(identifier: "LanguageViewController") 
+              let storyboard = UIStoryboard(name: "Home", bundle: nil)
+              controller = storyboard.instantiateViewController(identifier: "HomeViewController")
           } else {
               let storyboard = UIStoryboard(name: "Main", bundle: nil)
               controller = storyboard.instantiateViewController(identifier: "OnboardingVC")

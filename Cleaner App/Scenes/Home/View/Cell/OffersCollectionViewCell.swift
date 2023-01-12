@@ -9,6 +9,9 @@ import UIKit
 
 class OffersCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var offerImage: UIImageView!
+    @IBOutlet weak var offerDiscound: UILabel!
+    @IBOutlet weak var offreName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

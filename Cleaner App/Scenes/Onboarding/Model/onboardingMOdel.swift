@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import UIKit
+
+struct OnbardingModel {
+    
+    let title : String
+    let image : UIImage
+    
+}

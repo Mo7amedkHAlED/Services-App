@@ -10,18 +10,18 @@ import MapKit
 
 class MapViewController: UIViewController,CLLocationManagerDelegate {
     
-    
-    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var locationTX: UITextField!
+    @IBOutlet weak var locationTX: UILabel!
     // MARK: - Make Vars
     //
     var locationManager = CLLocationManager()
+    var prevLocation :CLLocation? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
+        mapView.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.allowsBackgroundLocationUpdates = true
         
@@ -31,6 +31,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
             showAlert(message: "Please Enabel Location to continue")
         }
         
+    }
+    // MARK: - Make confirm Button Action
+    //
+    
+    @IBAction func confirmButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+        vc.modalPresentationStyle = .currentContext
+        present(vc, animated: true)
     }
     // MARK: - to check if location enabel
     //
@@ -113,44 +122,38 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                 
         }
-        
         // Add the actions
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
-        
         // Present the controller
         present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func searchButton(_ sender: UIButton) {
-        guard let destination = locationTX.text else {return}
-        if destination != " " {
-            serchForDestination(destination: destination)
-        } else {
-            showAlert(message: "Please Enter Your Destination")
+
+    
+}
+    
+extension MapViewController : MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let newLocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        getLocationInfo(location: newLocation)
+        if prevLocation == nil || (prevLocation?.distance(from: newLocation))! > 100 {
+            getLocationInfo(location: newLocation)
         }
     }
-    func serchForDestination(destination: String) {
+    func getLocationInfo(location: CLLocation){
+        prevLocation = location
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(destination) { places, error in
+        geoCoder.reverseGeocodeLocation(location) { places, error in
             guard let place = places?.first, error == nil else {
                 self.showAlert(message: "No , Data To Display")
                 return
+
             }
-            print("places details")
-            print(place.name)
-            guard let location = place.location else {return}
-            self.locationTX.text = " "
-            
-            let pin = MKPointAnnotation()
-            pin.title = "\(place.name)"
-            pin.subtitle = " \(place.country)"
-            pin.coordinate = location.coordinate
-            self.mapView.addAnnotation(pin)
-            
-            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
-            self.mapView.setRegion(region, animated: true)
-            
+            self.locationTX.text = "\(place.country ?? " "),\(place.locality ?? " "),\(place.name ?? " ")"
+            UserDefaults.standard.set(self.locationTX.text, forKey: "UserLocation")
+//            print(UserDefaults.standard.string(forKey: "UserLocation"))
         }
     }
     
@@ -158,21 +161,32 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+//    @IBAction func searchButton(_ sender: UIButton) {
+//        guard let destination = locationTX.text else {return}
+//        if destination != " " {
+//            serchForDestination(destination: destination)
+//        } else {
+//            showAlert(message: "Please Enter Your Destination")
+//        }
+//    }
+//    func serchForDestination(destination: String) {
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString(destination) { places, error in
+//            guard let place = places?.first, error == nil else {
+//                self.showAlert(message: "No , Data To Display")
+//                return
+//            }
+//            guard let location = place.location else {return}
+//            self.locationTX.text = " "
+//            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
+//            self.mapView.setRegion(region, animated: true)
+//
+//        }
+        
+//    }
+       
+// MARK: - new
+//
     //        let latitude: Double = 24.693719
     //        let longitude: Double = 46.723596
     //        // Do any additional setup after loading the view.
